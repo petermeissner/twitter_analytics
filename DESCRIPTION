@@ -1,0 +1,16 @@
+Package: twitteranalytics
+Title: Doing some analysis with twitter accounts
+Date: 2014-12-20
+Version: 0.109999
+Maintainer: Peter Meissner <retep.meissner@gmail.com>
+Authors@R: as.person(c(
+    "Peter Meissner <retep.meissner@gmail.com> [aut, cre]"
+    ))
+Description: Doing some analysis with twitter accounts
+Depends:
+    R (>= 3.0.0)
+Imports:
+    twitteR (>= 1.1.8)
+License: GPL (>= 2)
+LazyData: true
+URL: https://github.com/petermeissner/twitteranalytics
