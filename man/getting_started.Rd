@@ -6,10 +6,12 @@
 getting_started()
 }
 \description{
-\itemize{
-\item{function loads twitteR package that should have been installed beforehand via: \code{devtools::install_github("geoffjentry/twitteR")}}
-\item{function loads user credentials via \code{Sys.getenv()} to than do OAuth with server}
-\item{function assumes that you have saved your credentials in .Renviron file in user path ( \code{normalizePath("~/")} ) as described here: \url{http://stat545-ubc.github.io/bit003_api-key-env-var.html} }
-}
+\itemize{ \item{function loads twitteR package that should have been
+installed beforehand via:
+\code{devtools::install_github("geoffjentry/twitteR")}} \item{function loads
+user credentials via \code{Sys.getenv()} to than do OAuth with server}
+\item{function assumes that you have saved your credentials in .Renviron file
+in user path ( \code{normalizePath("~/")} ) as described here:
+\url{http://stat545-ubc.github.io/bit003_api-key-env-var.html} } }
 }
 

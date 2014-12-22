@@ -11,7 +11,6 @@
 
 
 getting_started <- function(){
-  require(twitteR)
   api_key             <<- Sys.getenv("twitter_api_key")
   api_secret          <<- Sys.getenv("twitter_api_secret")
   access_token        <<- Sys.getenv("twitter_access_token")
