@@ -1,0 +1,41 @@
+
+R version 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #' script logging my twitter statistics
+> 
+> # packages
+> library(twitteR)
+> library(twitteranalytics)
+> 
+> # working dir
+> setwd("D:/Peter/Dropbox/RPackages/")
+> 
+> # logging some more
+> name <- "ADCR"
+> dump <- paste0(name,".twitterlog")
+> reset_time <- 15*60
+> twitter_accounts <- c(  "marvin_dpr",
++                         "simonsaysnothin", 
++                         "christianrubba", 
++                         "jonas_nijhuis", 
++                         "RDataCollection"   )
+> 
+> for ( i in seq_along(twitter_accounts)) {
++   Sys.sleep(reset_time)
++   getting_started()
++   tw_data <- twitter_log(twitter_accounts[i]     , file = dump)  
++ }
