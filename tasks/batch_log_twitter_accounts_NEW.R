@@ -4,32 +4,29 @@
 library(twitteranalytics)
 
 # working dir
-setwd("D:/Peter/Dropbox/RPackages/")
+try(setwd("D:/Peter/Dropbox/RPackages/"))
+try(setwd("C:/Dropbox/RPackages/"))
 
 # logging some more
 i<-1
 name <- "ADCR"
 dump <- paste0(name,".twitterlog")
-reset_time <- 1 # 15*60
-twitter_accounts <- c(  "marvin_dpr",
-                        "simonsaysnothin", 
-                        "christianrubba", 
-                        "jonas_nijhuis", 
-                        "RDataCollection"   )
-twitter_accounts <- sample(twitter_accounts)
+reset_time <- 1 #15*60
+twitter_accounts <- list(
+    list(name="marvin_dpr"     , extra=list(adcr=TRUE)),
+    list(name="simonsaysnothin", extra=list(adcr=TRUE)), 
+    list(name="christianrubba" , extra=list(adcr=TRUE)), 
+    list(name="jonas_nijhuis"  , extra=list(adcr=TRUE)), 
+    list(name="RDataCollection", extra=list(adcr=TRUE))   
+  )
 
 for ( i in seq_along(twitter_accounts)) {
-  message(paste0(i,"/",length(twitter_accounts), " : ", twitter_accounts[i]))
-  # authentication
   getting_started()
-  # getting data
-  tw_data <- twitter_log(twitter_accounts[i]     , file = dump)  
-  # waiting some time 
+  tw_data <- twitter_log(twitter_accounts[[i]]$name     , file = dump)  
   Sys.sleep(reset_time)
 }
 
 
-# doing some graphing 
 tw_data <- get_twitter_log(dump)
 pdf(file=paste0(name,".pdf"), width=10, height=7)
   plot(tw_data)

@@ -18,24 +18,35 @@ Type 'q()' to quit R.
 > #' script logging my twitter statistics
 > 
 > # packages
-> library(twitteR)
 > library(twitteranalytics)
 > 
 > # working dir
 > setwd("D:/Peter/Dropbox/RPackages/")
 > 
 > # logging some more
+> i<-1
 > name <- "ADCR"
 > dump <- paste0(name,".twitterlog")
-> reset_time <- 15*60
+> reset_time <- 1 # 15*60
 > twitter_accounts <- c(  "marvin_dpr",
 +                         "simonsaysnothin", 
 +                         "christianrubba", 
 +                         "jonas_nijhuis", 
 +                         "RDataCollection"   )
+> twitter_accounts <- sample(twitter_accounts)
 > 
 > for ( i in seq_along(twitter_accounts)) {
-+   Sys.sleep(reset_time)
++   message(paste0(i,"/",length(twitter_accounts), " : ", twitter_accounts[i]))
++   # authentication
 +   getting_started()
++   # getting data
 +   tw_data <- twitter_log(twitter_accounts[i]     , file = dump)  
++   # waiting some time 
++   Sys.sleep(reset_time)
 + }
+1/5 : simonsaysnothin
+[1] "Using direct authentication"
+Error in check_twitter_oauth() : OAuth authentication error:
+This most likely means that you have incorrectly called setup_twitter_oauth()'
+Calls: getting_started -> <Anonymous> -> check_twitter_oauth
+Execution halted
