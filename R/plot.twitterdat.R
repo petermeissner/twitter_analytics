@@ -4,10 +4,10 @@
 #'@param x data to be plotted
 
 plot.twitterdat <- function(x, ...){
-  maxy <- rep(max(x$n_following, x$n_follower), length(x$date))
+  maxy <- rep(max(x$n_following, x$n_follower, na.rm=T), length(x$date))
   plot(x$date, maxy, 
        ylab="n",xlab="date", 
-       ylim=c(0, max(maxy) ),
+       ylim=c(0, max(maxy, na.rm=T) ),
        type="n") 
   points(x$date, x$n_following, col="#3B9AB264", pch=19)
   points(x$date, x$n_follower,  col="#F21A0064", pch=19)

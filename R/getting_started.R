@@ -18,19 +18,19 @@ getting_started <- function(){
   if ( api_key =="" ) {
     tmp <- readLines(paste0(normalizePath("~/"),".Renviron"))
     api_key=stringr::str_replace(
-      grep("twitter_api_key", tmp, value=T),
+      grep("twitter_api_key=", tmp, value=T),
       "twitter_api_key=",
       "")
     api_secret=stringr::str_replace(
-      grep("twitter_api_secret", tmp, value=T),
+      grep("twitter_api_secret=", tmp, value=T),
       "twitter_api_secret=",
       "")
     access_token=stringr::str_replace(
-      grep("twitter_access_token", tmp, value=T),
+      grep("twitter_access_token=", tmp, value=T),
       "twitter_access_token=",
       "")
     access_token_secret=stringr::str_replace(
-      grep("twitter_access_token_secret", tmp, value=T),
+      grep("twitter_access_token_secret=", tmp, value=T),
       "twitter_access_token_secret=",
       "")
   } 

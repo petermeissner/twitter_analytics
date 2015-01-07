@@ -5,7 +5,7 @@
 #' @param screen_name name of the twitter account to be analyzed which is passed to twitteR::getUser()
 
 get_ff_data <- function(screen_name){
-  user      <- twitteR::getUser(screen_name)
+  user      <- getUser(screen_name)
   friends   <- user$getFriends()
   followers <- user$getFollowers()
   followers_data <- 
