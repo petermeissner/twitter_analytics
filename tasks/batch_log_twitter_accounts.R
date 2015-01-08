@@ -14,7 +14,7 @@ try_file <- "C:/Users/Peter/Documents/tw_marvindpr_bot.credentials"
 if(file.exists(try_file)){
   cred_file <- try_file
 }
-try_file <- "D:/Users/Peter/Documents/tw_marvindpr_bot.credentials"
+try_file <- "D:/Users/Peter/Documents/tw_marvinuni.credentials"
 ##try_file <- "D:/Users/Peter/Documents/tw_marvindpr.credentials"
 if(file.exists(try_file)){
   cred_file <- try_file
@@ -33,19 +33,23 @@ tmp <- readLines(cred_file)
                   grep("twitter_access_token_secret=", tmp, value = T), 
                   "twitter_access_token_secret=", "")
 setup_twitter_oauth(api_key, api_secret, access_token, access_token_secret)
+2
+
 
 # logging options
+path        <- "twitter_analytics/data"
 name        <- "all"
-dump        <- paste0(name,".twitterlog")
+dump        <- paste0(path, "/", name,".twitterlog")
 sample_size <- 1
+
 
 # account list
 twitter_accounts <- list(
-  list(name="marvin_dpr"     , extra=list(adcr=TRUE)),
-  list(name="simonsaysnothin", extra=list(adcr=TRUE)), 
-  list(name="christianrubba" , extra=list(adcr=TRUE)), 
-  list(name="jonas_nijhuis"  , extra=list(adcr=TRUE)), 
-  list(name="RDataCollection", extra=list(adcr=TRUE)),
+  list(name="marvin_dpr"     , extra=list(adcr=TRUE, type="ADCR author")),
+  list(name="simonsaysnothin", extra=list(adcr=TRUE, type="ADCR author")), 
+  list(name="christianrubba" , extra=list(adcr=TRUE, type="ADCR author")), 
+  list(name="jonas_nijhuis"  , extra=list(adcr=TRUE, type="ADCR author")), 
+  list(name="RDataCollection", extra=list(adcr=TRUE, type="ADCR author")),
   list(name="RenateKuenast",   extra=list(type="DPA-GermanPoliticians", party="gruene", certified=T)),
   list(name="b_riexinger",     extra=list(type="DPA-GermanPoliticians", party="linke",  certified=T)),
   list(name="ArminLaschet",    extra=list(type="DPA-GermanPoliticians", party="cdu",    certified=T)),
@@ -136,6 +140,9 @@ for ( i in seq_along(twitter_accounts_sample) ) {
         " minutes"))
 }
 
+limits <- getCurRateLimitInfo()
+iffer  <- limits$remaining == min(limits$remaining)
+limits[iffer, ]
 
  
 # doing some graphing 
