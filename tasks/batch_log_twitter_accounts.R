@@ -147,17 +147,17 @@ limits[iffer, ]
  
 # doing some graphing 
 tw_data <- get_twitter_log(dump)
-pdf(file="twitter_adcr.pdf", width=10, height=7)
+pdf(file="twitter_analytics/graphics/twitter_adcr.pdf", width=10, height=7)
   plot(tw_data[tw_data$adcr==T & !is.na(tw_data$adcr), ])
 dev.off()
 
-pdf(file=("twitter_RDataCollection.pdf"), width=10, height=7)
+pdf(file=("twitter_analytics/graphics/twitter_RDataCollection.pdf"), width=10, height=7)
   plot(tw_data[tw_data$screen_name=="RDataCollection", ])
 dev.off()
 
 # doing some graphing 
 tw_data <- get_twitter_log(dump)
-pdf(file=paste0("all",".pdf"), width=10, height=7)
+pdf(file=paste0("twitter_analytics/graphics/all",".pdf"), width=10, height=7)
   plot(tw_data)
 dev.off()
 
