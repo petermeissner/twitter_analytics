@@ -160,44 +160,26 @@ Error in setwd("C:/Dropbox/RPackages") : cannot change working directory
 +         " minutes"))
 + }
 14 remaining
-1/1 : list(name = "HanneloreKraft", extra = list(type = "DPA-GermanPoliticians", party = "spd", certified = TRUE))
-that took 8.18  minutes
+1/1 : list(name = "GoeringEckardt", extra = list(type = "DPA-GermanPoliticians", party = "gruene", certified = TRUE))
+that took 8.75  minutes
 There were 50 or more warnings (use warnings() to see the first 50)
 > 
 > limits <- getCurRateLimitInfo()
 > iffer  <- limits$remaining == min(limits$remaining)
 > limits[iffer, ]
         resource limit remaining               reset
-30 /users/lookup   180         0 2015-01-19 15:15:31
+30 /users/lookup   180         0 2015-01-19 16:56:44
+Warning messages:
+1: In as.POSIXlt.POSIXct(x, tz) : unknown timezone 'GMT'
+2: In as.POSIXlt.POSIXct(x, tz) : unknown timezone 'America/New_York'
 > 
 >  
 > # doing some graphing 
 > tw_data <- get_twitter_log(dump)
 > pdf(file="twitter_analytics/graphics/twitter_adcr.pdf", width=10, height=7)
->   plot(tw_data[tw_data$adcr==T & !is.na(tw_data$adcr), ])
-> dev.off()
-null device 
-          1 
-> 
-> pdf(file=("twitter_analytics/graphics/twitter_RDataCollection.pdf"), width=10, height=7)
->   plot(tw_data[tw_data$screen_name=="RDataCollection", ])
-> dev.off()
-null device 
-          1 
-> 
-> # doing some graphing 
-> tw_data <- get_twitter_log(dump)
-> pdf(file=paste0("twitter_analytics/graphics/all",".pdf"), width=10, height=7)
->   plot(tw_data)
-> dev.off()
-null device 
-          1 
-> 
-> 
-> 
-> 
-> 
-> 
-> proc.time()
-   user  system elapsed 
- 309.25    3.71  495.03 
+Error in pdf(file = "twitter_analytics/graphics/twitter_adcr.pdf", width = 10,  : 
+  failed to load default encoding
+In addition: Warning message:
+In pdf(file = "twitter_analytics/graphics/twitter_adcr.pdf", width = 10,  :
+  failed to load encoding file 'WinAnsi.enc'
+Execution halted
