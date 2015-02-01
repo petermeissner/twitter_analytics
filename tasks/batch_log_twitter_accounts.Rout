@@ -160,44 +160,4 @@ Error in setwd("C:/Dropbox/RPackages") : cannot change working directory
 +         " minutes"))
 + }
 14 remaining
-1/1 : list(name = "HanneloreKraft", extra = list(type = "DPA-GermanPoliticians", party = "spd", certified = TRUE))
-that took 7.52  minutes
-There were 50 or more warnings (use warnings() to see the first 50)
-> 
-> limits <- getCurRateLimitInfo()
-> iffer  <- limits$remaining == min(limits$remaining)
-> limits[iffer, ]
-        resource limit remaining               reset
-30 /users/lookup   180         0 2015-01-23 11:15:14
-> 
->  
-> # doing some graphing 
-> tw_data <- get_twitter_log(dump)
-> pdf(file="twitter_analytics/graphics/twitter_adcr.pdf", width=10, height=7)
->   plot(tw_data[tw_data$adcr==T & !is.na(tw_data$adcr), ])
-> dev.off()
-null device 
-          1 
-> 
-> pdf(file=("twitter_analytics/graphics/twitter_RDataCollection.pdf"), width=10, height=7)
->   plot(tw_data[tw_data$screen_name=="RDataCollection", ])
-> dev.off()
-null device 
-          1 
-> 
-> # doing some graphing 
-> tw_data <- get_twitter_log(dump)
-> pdf(file=paste0("twitter_analytics/graphics/all",".pdf"), width=10, height=7)
->   plot(tw_data)
-> dev.off()
-null device 
-          1 
-> 
-> 
-> 
-> 
-> 
-> 
-> proc.time()
-   user  system elapsed 
- 305.57    3.33  455.30 
+1/1 : list(name = "tsghessen", extra = list(type = "DPA-GermanPoliticians", party = "spd", certified = TRUE))
