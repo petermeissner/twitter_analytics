@@ -160,4 +160,4 @@ Error in setwd("C:/Dropbox/RPackages") : cannot change working directory
 +         " minutes"))
 + }
 14 remaining
-1/1 : list(name = "cem_oezdemir", extra = list(type = "DPA-GermanPoliticians", party = "gruene", certified = TRUE))
+1/1 : list(name = "groehe", extra = list(type = "DPA-GermanPoliticians", party = "cdu", certified = TRUE))
