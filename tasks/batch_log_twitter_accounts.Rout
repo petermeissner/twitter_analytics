@@ -160,14 +160,14 @@ Error in setwd("C:/Dropbox/RPackages") : cannot change working directory
 +         " minutes"))
 + }
 14 remaining
-1/1 : list(name = "AndiScheuer", extra = list(type = "DPA-GermanPoliticians", party = "csu", certified = TRUE))
-that took 0.97  minutes
+1/1 : list(name = "BaerbelHoehn", extra = list(type = "DPA-GermanPoliticians", party = "gruene", certified = TRUE))
+that took 6.83  minutes
 > 
 > limits <- getCurRateLimitInfo()
 > iffer  <- limits$remaining == min(limits$remaining)
 > limits[iffer, ]
-                      resource limit remaining               reset
-55 /account/verify_credentials    15        13 2015-02-23 13:45:31
+         resource limit remaining               reset
+32 /followers/ids    15        12 2015-03-10 16:47:19
 > 
 >  
 > # doing some graphing 
@@ -199,4 +199,4 @@ null device
 > 
 > proc.time()
    user  system elapsed 
-  39.76    0.67   62.85 
+ 211.05    1.95  453.19 
